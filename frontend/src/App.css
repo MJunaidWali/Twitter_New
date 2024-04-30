@@ -1,0 +1,240 @@
+ * {
+   font-family: sans-serif;
+   padding: 0px;
+   margin: 0px;
+ }
+
+ .box_wrapper {
+   background-color: rgb(0, 0, 0);
+   height: 100vh;
+   display: flex;
+ }
+
+ /* left box css */
+ .left_parent {
+   background-color: black;
+   height: 100%;
+   width: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .logox {
+   height: 20em;
+ }
+
+ /* Right box styling here  */
+ .Right_parent {
+   color: white;
+   padding-top: 50px;
+   ;
+ }
+
+ .except {
+   padding-top: 30px;
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+   background-color: black;
+   color: white;
+ }
+
+ .inputboxes {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+ }
+
+ .for_google,
+ .sign_butt,
+ .create {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   font-weight: bolder;
+   border-radius: 10em;
+   width: 20em;
+   padding: 8px 2px 8px;
+ }
+
+ .happ {
+   font-size: 4em;
+   font-weight: 1000;
+ }
+
+ .input_fields {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+ }
+
+ .sign_butt {
+   color: rgb(29, 155, 240);
+   background-color: black;
+   border: 1px solid rgb(83, 100, 113);
+ }
+
+ .create {
+   background-color: rgb(29, 155, 240);
+   color: white;
+   border: 1px;
+ }
+
+ .line_or {
+   display: inline-flex;
+   align-items: center;
+ }
+
+ .lineing {
+   margin: 10px;
+   height: 1px;
+   width: 7em;
+   background-color: rgb(83, 100, 113);
+ }
+
+ .google {
+   height: 2em;
+ }
+
+ /* the footer stylish */
+
+ .foot,
+ .terms,p {
+   color: #71767B;
+ }
+
+ .fooots {
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+   flex-wrap: wrap;
+   background-color: black;
+ }
+
+ /* the sign in box starts from here  */
+ .main_1 {
+   background-color: black;
+   height: 600px;
+   width: 540px;
+   border-radius: 20px;
+   min-height: 650px;
+   margin: 40px;
+
+ }
+
+ .main_wrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: transparent;
+   height: 100vh;
+   width: 100vw;
+ }
+
+ .cross {
+   height: 15px;
+ }
+
+ .xm {
+   height: 45px;
+ }
+
+ .main_2,
+ .first {
+   width: 100%;
+ }
+
+ .withcross {
+   width: 95%;
+   display: inline-flex;
+   justify-content: center;
+   text-align: center;
+   align-self: flex-start;
+   margin: 10px;
+ }
+
+ .databox {
+   font-size: 15px;
+   width: 80%;
+   display: flex;
+   gap: 20px;
+   flex-direction: column;
+   padding: 15px 2.2em 0 2.2em;
+   margin: 0px 1.4em 0 1.4em;
+   align-items: center;
+ }
+
+ h1,
+ .h1,h3 {
+   color: white;
+ }
+
+ .sig {
+   color: rgb(29, 155, 240);
+ }
+
+ .bothlinks {
+   display: grid;
+   gap: 18px;
+ }
+
+ .input {
+  color: #8e9397;
+   width: 20em;
+padding: 10px;   border: 1px solid #71767B;
+   background-color: black;
+ }
+
+ .input::placeholder {
+   font: 1.1em sans-serif;
+ }
+
+ .white {
+   background-color: #0d0d0d;
+   width:-webkit-fill-available; 
+   font-size: larger;
+ }
+
+ .big {
+   width: 30em;
+   padding: 13px;
+   border-radius: 5px;
+   border: 1px solid #71767B;
+   color: #71767B;
+   background-color: black;
+ }
+
+ .flexbox {
+   display: flex;
+   flex-direction: column;
+   gap: 290px;
+ }
+
+ .all {
+   display: flex;
+   gap: 20px
+ }.inputsf{
+  color: #8e9397;
+  background-color: black;
+  border:1px solid #71767B; 
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+ }.dob{
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+ }.down{
+  margin-top: 6em;
+ }
+ ._back{
+  background-color: rgb(70, 69, 69);
+ }.upper{
+display: contents; }
+.pass{
+  display: block;
+}
