@@ -3,16 +3,17 @@ import cross from "../images/Cross.png";
 import xma from "../images/X.png";
 import { NavLink, redirect } from "react-router-dom";
 import axios from "axios";
+import { URL } from "./url";
 
 const Flow = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/users", {
+      const response = await axios.post(`${URL}, {
         usernameOrEmail: "usernameOrEmailValue", 
         password: password
-      });
+      }`);
 
       if (response.status === 200 && response.data.passwordMatch) {
         Window.location.href="/home";

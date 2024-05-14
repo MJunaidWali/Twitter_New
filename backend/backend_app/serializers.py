@@ -1,21 +1,27 @@
 from rest_framework import serializers
-from .models import MyUser,Tweet, Comment
-
-class MyUserSerializer(serializers.ModelSerializer):
+from .models import Tweet, Reply,User
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MyUser
-        fields = ['id', 'username',"dateofbirth", 'email','password']
-        # read_only_fields = []
+        model = User
+        fields = ['id', 'username', 'email', 'password'] 
+        extra_kwargs = {
+            'password': {'write_only': True}, 
+        }
 
-          
+    def create(self, validated_data):
+        user = User.objects.create_user(**validated_data) 
+        return user
+    
 class TweetSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True) 
     class Meta:
         model = Tweet
-        fields = ['id', 'content', 'created_at']
-        read_only_fields = ['created_at']  # Ensures 'created_at' is read-only
+        fields = ['id', 'user', 'comment', 'created_at']
+        read_only_fields = ['created_at']
 
-class CommentSerializer(serializers.ModelSerializer):
+class ReplySerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True) 
     class Meta:
-        model = Comment
-        fields = ['id', 'tweet', 'content', 'likes', 'dislikes', 'created_at']
-        read_only_fields = ['created_at']  # Ensures 'created_at' is read-only
+        model = Reply
+        fields = ['id', 'user', 'tweet', 'content', 'likes', 'dislikes', 'created_at']
+        read_only_fields = ['created_at']

@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Tweet from '../componenets/Tweet';
+import { Link } from 'react-router-dom';
 
-const home = () => {
+const Home = () => {
   return (
     <div>
-      <h1>I am the homepage</h1>
+      <button>
+        <Link to="/signout">Logout</Link>
+      </button>
+      <p>I am the homepage</p>
+      <Tweet/>
     </div>
-  )
-}
+  );
+};
 
-export default home
+export default Home;

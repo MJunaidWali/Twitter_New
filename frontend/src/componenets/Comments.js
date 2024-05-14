@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import { URL } from "../pages/url"
+
+
 const Comments = ({ tweetId }) => {
   const [commentContent, setCommentContent] = useState("");
 
@@ -12,7 +15,7 @@ const Comments = ({ tweetId }) => {
     event.preventDefault();
     try {
       // Send a POST request to your backend API to create the comment
-      await axios.post(`http://127.0.0.1:8000/tweets/${tweetId}/comments/`, {
+      await axios.post(`${URL}/tweets/${tweetId}/comments/`, {
         content: commentContent
       });
       console.log("Comment created successfully");

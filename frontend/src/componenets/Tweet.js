@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+
 const Tweet = () => {
-  const [tweetContent, setTweetContent] = useState("");
+  const [Comment, setTweetContent] = useState("");
 
   const handleChange = (event) => {
     setTweetContent(event.target.value);
@@ -11,32 +12,32 @@ const Tweet = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // Send a POST request to your backend API to create the tweet
-      await axios.post("http://127.0.0.1:8000/tweets/", {
-        content: tweetContent
-      });
+      await axios.post(`, {
+        content: Comment
+      }`);
       console.log("Tweet created successfully");
-      // Optionally, you can redirect the user to another page after successful tweet creation
     } catch (error) {
       console.error("Error creating tweet:", error.message);
     }
   };
 
   return (
-    <div>
+    <div className="main_wrapper">
+    <div className="main_1">
       <h2>Create a new tweet</h2>
       <form onSubmit={handleSubmit}>
         <textarea
-          value={tweetContent}
+          value={Comment}
           onChange={handleChange}
           placeholder="What's happening?"
           rows={4}
           cols={50}
-          maxLength={280} // Twitter's maximum tweet length
+          maxLength={280}
         />
         <br />
-        <button type="submit">Tweet</button>
+        <button type="submit">Post Comment</button>
       </form>
+    </div>
     </div>
   );
 };

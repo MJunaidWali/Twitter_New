@@ -5,9 +5,9 @@ import Signin from "./pages/Signin.js";
 import Flow from "./pages/Flow.js";
 import Create from "./pages/Create.js";
 import Home from "./pages/Home.js";
-import Nopage from "./pages/Nopage.js";
-import Tweet from "./pages/Tweet.js";
-import Comments from "./pages/Comments.js";
+import Tweet from "./componenets/Tweet.js";
+import Comments from "./componenets/Comments.js";
+import Signout from "./pages/Signout.js";
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
         <Route index path="/" element={<Login />} />
         <Route path="/signflow" element={<Flow />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/signout" element={<Signout />} />
         <Route path="/create" element={<Create />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/nopage" element={<Nopage />} />
         <Route path="/tweet" element={<Tweet />} />
         <Route path="/comments" element={<Comments/>} />
       </Routes>

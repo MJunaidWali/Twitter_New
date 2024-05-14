@@ -20,9 +20,7 @@ const Login = () => {
               <div className="input_fields">
                 <button className="for_google">
                   <img className="google" src={Google} alt="google" />
-                  <NavLink to="/signup" className="active">
                     Sign Up With Google
-                  </NavLink>
                 </button>
                 <button className="for_google">
                   <img className="google" src={Apple} alt="Apple" />

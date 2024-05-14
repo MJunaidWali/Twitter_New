@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import cross from "../images/Cross.png";
 import xma from "../images/X.png";
 import axios from "axios";
+import { URL } from "./url";
 
 const Create = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
-    dateofbirth: ""
   });
 
   const handleInputChange = (e) => {
@@ -19,17 +19,15 @@ const Create = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:8000/users/", formData);
-      if (response.status >= 200 && response.status < 300){
-        console.log(response)
-        window.location.href = "/signin"; }
-         else {
-
-        window.location.href = "/nopage";
+      const response = await axios.post(URL, formData); 
+      if (response.status >= 200 && response.status < 300) {
+        console.log(response);
+        window.location.href = "/signin";
+      } else {
+        console.log('error creating user')
       }
     } catch (error) {
       console.error("Error:", error);
-      window.location.href = "/nopage";
     }
   };
 
@@ -44,21 +42,22 @@ const Create = () => {
         </div>
         <div className="heading"></div>
         <div className="databox secdatabox">
-          <div className="flexbox all ">
+          <div className="flexbox all">
             <div>
               <h1>Create Your Account</h1>
             </div>
             <form onSubmit={handleSubmit}>
-              <input
-                className="big"
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleInputChange}
-                placeholder="Name"
-                required
-              />
-
+              <div>
+                <input
+                  className="big"
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleInputChange}
+                  placeholder="Name"
+                  required
+                />
+              </div>
               <div className="upper">
                 <div>
                   <input

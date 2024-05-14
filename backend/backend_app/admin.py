@@ -1,23 +1,16 @@
 from django.contrib import admin
-from .models import Tweet, Comment,MyUser
+from .models import Tweet, Reply
 
 
-
-
-@admin.register(MyUser)
-class MyUser(admin.ModelAdmin):
-    list_display = ('id', 'username', 'email', 'date_of_birth')
-    search_fields = ('username', 'email','password')
-    list_filter = ('date_of_birth',)
 
 @admin.register(Tweet)
 class TweetAdmin(admin.ModelAdmin):
-    list_display = ('id', 'content', 'created_at')
-    search_fields = ('content',)
+    list_display = ('id', 'comment', 'created_at')
+    search_fields = ('comment',)
     list_filter = ('created_at',)
 
-@admin.register(Comment)
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'tweet', 'content', 'created_at', 'likes', 'dislikes')  # Add 'likes' and 'dislikes' fields
+@admin.register(Reply)
+class ReplyAdmin(admin.ModelAdmin):
+    list_display = ('id', 'tweet', 'content', 'created_at', 'likes', 'dislikes')
     search_fields = ('content',)
     list_filter = ('created_at',)

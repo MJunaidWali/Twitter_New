@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "venv/bin/python3.11",
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.iconTheme": "vscode-icons",
+    "python.formatting.provider": "black"
+}
