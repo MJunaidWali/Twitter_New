@@ -12,16 +12,16 @@ class UserSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data) 
         return user
     
-class TweetSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True) 
-    class Meta:
-        model = Tweet
-        fields = ['id', 'user', 'comment', 'created_at']
-        read_only_fields = ['created_at']
+from rest_framework import serializers
+from .models import Tweet, Reply
 
 class ReplySerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True) 
     class Meta:
         model = Reply
-        fields = ['id', 'user', 'tweet', 'content', 'likes', 'dislikes', 'created_at']
-        read_only_fields = ['created_at']
+        fields = ['id', 'tweet', 'content', 'likes', 'dislikes', 'created_at']
+
+class TweetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tweet
+        fields = ['id', 'comment', 'created_at']
+
